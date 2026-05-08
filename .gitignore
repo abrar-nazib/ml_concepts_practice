@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+.envrc
+
+# uv
+# uv.lock is committed by convention; comment the next line to track it.
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# ML artifacts
+data/
+datasets/
+checkpoints/
+runs/
+wandb/
+mlruns/
+lightning_logs/
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.npz
+*.npy
+*.pkl
+*.parquet
+
+# Logs / scratch
+*.log
+scratch/
+tmp/
