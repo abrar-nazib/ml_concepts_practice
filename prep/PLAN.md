@@ -21,7 +21,7 @@ day" — no new concept, only polish, walkthrough notebooks, README cleanup.
 ## Workflow (hybrid PR cycle)
 
 - **Mon / Wed / Fri** — *you write*. Open a feature branch
-  `feature/<area>-<concept>`. Open a PR with a "why" description. I review
+  `feat/<area>-<concept>`. Open a PR with a "why" description. I review
   as senior peer, leave inline comments + suggested changes. You iterate.
   Merge with a squash commit.
 - **Tue / Thu** — *I write*. PR for you to review. You leave comments,
@@ -29,10 +29,10 @@ day" — no new concept, only polish, walkthrough notebooks, README cleanup.
 - **Sat** — integration day. Polish the week's work into a notebook
   walkthrough; cross-link READMEs; tag a milestone.
 
-Branch naming: `feature/<top-level-folder>-<short-desc>`. Examples:
-- `feature/model-selection-kfold-from-scratch`
-- `feature/metrics-confusion-matrix`
-- `feature/rag-citations-eval`
+Branch naming: `feat/<top-level-folder>-<short-desc>`. Examples:
+- `feat/model-selection-kfold-from-scratch`
+- `feat/metrics-confusion-matrix`
+- `feat/rag-citations-eval`
 
 PR title format: `feat(<area>): <one-line>`. Examples:
 - `feat(model-selection): k-fold cross-validation from scratch`

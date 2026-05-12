@@ -188,9 +188,9 @@ gh issue comment 12 --body "Done, see PR #18"
 
 ```bash
 git checkout main && git pull
-git checkout -b feature/<area>-<concept>
+git checkout -b feat/<area>-<concept>
 # ...work, commit small...
-git push -u origin feature/<area>-<concept>
+git push -u origin feat/<area>-<concept>
 gh pr create --title "feat(<area>): <one-line>" \
              --body "Why: ...\nWhat: ...\nNotes: ..." \
              --label "wk-N"
@@ -249,7 +249,7 @@ gh run watch                                # tail the latest run
 ## Common slip-ups
 
 - **`gh pr create` from `main`** — must be on a feature branch. If you
-  forget, `git checkout -b feature/...` and re-run.
+  forget, `git checkout -b feat/...` and re-run.
 - **No upstream when pushing first time** — use `git push -u origin <branch>`
   so subsequent `git push` works without args. `gh pr create` also pushes
   automatically if you forgot.
