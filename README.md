@@ -7,11 +7,13 @@ folder is one concept area: code, short notes, and tests live together.
 
 ```
 ml/
-├── linear-models/   # linear & logistic regression, ridge/lasso, perceptron
-├── trees/           # decision trees, random forests, gradient boosting
-├── nn/              # MLPs, autograd, optimizers, regularization
-├── transformers/    # attention, encoder/decoder blocks, mini-GPT
-└── common/          # shared utilities (data, plotting, metrics)
+├── linear-models/    # linear & logistic regression, ridge/lasso, perceptron
+├── trees/            # decision trees, random forests, gradient boosting
+├── nn/               # MLPs, autograd, optimizers, regularization
+├── transformers/     # attention, encoder/decoder blocks, mini-GPT
+├── model-selection/  # train/test split, k-fold CV, grid/random search
+├── metrics/          # confusion matrix, F1, ROC-AUC, MSE, R², ...
+└── common/           # shared plumbing (synthetic data, plotting helpers)
 ```
 
 Each concept folder follows the same shape:
