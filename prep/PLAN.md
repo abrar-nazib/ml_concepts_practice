@@ -45,27 +45,41 @@ RAG → agents → classical ML → vision/depth → transformer internals
 → RL primer → LeetCode/behavioral. Plan order is *pedagogical*, not
 priority — foundations first so later weeks compound.
 
-### Week 1 — Classical ML foundations (where you are now)
+### Week 1 — Classical ML foundations (Days 1–3)
 
 - Topics: KFold, StratifiedKFold, GridSearchCV, RandomizedSearchCV,
   train/val/test discipline, confusion matrix, precision / recall / F1,
   ROC-AUC, calibration.
 - Daily papers (skim level, 30 min each): see [`papers.md`](papers.md) §1.
-- Ship: **heart-disease classifier end-to-end**, with CV, hyperparameter
-  tuning, full eval report (precision/recall/ROC), and a notebook
-  walkthrough. Compare 4 classifiers (logreg, SVM, KNN, RF).
+- **Day 3 ship** — `notebooks/heart_disease_walkthrough.ipynb`: one
+  integration notebook that ties together your kfold / grid-search /
+  random-search / metrics work into a single end-to-end pipeline on the
+  heart-disease dataset. Read top-to-bottom as: load → split → CV →
+  tuning → metrics → markdown takeaway. This is the Wk 1 portfolio
+  piece — without it, your 4 demo notebooks read as exercises, not a
+  project.
 
-### Week 2 — Classical ML depth
+### Week 2 — Classical ML sprint (Day 4 only, ~1 day)
 
-- Topics: logistic regression from scratch (numpy SGD), decision tree
-  from scratch (gini split), XGBoost / LightGBM (use, don't implement),
-  bias–variance trade-off, regularization (L1/L2), class imbalance
-  (class weights, SMOTE), probability calibration.
+Compressed from 6 days to 1 — from-scratch implementations dropped
+(Bourke's PyTorch training loop covers the same intuition, and modern
+AI-eng interviews skew preprocessing + ensemble methods over numpy
+gradient descent).
+
+- Topics covered through one integrated notebook: XGBoost + LightGBM,
+  `Pipeline` + `ColumnTransformer`, missing values, categorical
+  encoding, scaling, class imbalance (class weights vs SMOTE vs
+  threshold tuning), calibration.
 - Daily papers: [`papers.md`](papers.md) §2.
-- Ship: **second tabular project on an imbalanced dataset** (credit fraud
-  or churn). Demonstrates that you can handle imbalance correctly.
+- **Day 4 ship** — `trees/xgb_lightgbm_imbalanced.ipynb`: one notebook,
+  one imbalanced tabular dataset (credit-card fraud or churn), full
+  preprocessing Pipeline, both XGBoost and LightGBM with proper
+  StratifiedKFold, class-weight + SMOTE comparison, calibration plot.
+  This is the second tabular portfolio piece — gives you the talking
+  points "I used SMOTE alongside class weights, calibrated with
+  isotonic regression because the fraud cost matrix was asymmetric."
 
-### Week 3 — Neural networks (PyTorch foundation via Bourke)
+### Week 3 — Neural networks (PyTorch foundation via Bourke) — starts Day 5
 
 - **Spine**: Daniel Bourke's *Learn PyTorch for Deep Learning*
   ([YouTube, 25h](https://www.youtube.com/watch?v=V_xro1bcAuA),
@@ -178,8 +192,8 @@ classical ML weeks, demonstrate:
 
 ## Milestones (end-of-week checklist)
 
-- [ ] Wk 1 — heart-disease classifier shipped, 4+ PRs merged
-- [ ] Wk 2 — second tabular project shipped, paper log started
+- [ ] Wk 1 — `heart_disease_walkthrough.ipynb` integration shipped, 4+ component PRs merged
+- [ ] Wk 2 (1-day sprint) — `trees/xgb_lightgbm_imbalanced.ipynb` shipped, paper log started
 - [ ] Wk 3 — MLP + CNN in PyTorch shipped
 - [ ] Wk 4 — tiny transformer shipped + attention walkthrough notebook
 - [ ] Wk 5 — tool-using CLI assistant shipped
@@ -189,8 +203,12 @@ classical ML weeks, demonstrate:
 
 ## Things that can derail this — watch for them
 
-- **Perfectionism on early weeks.** Don't implement every classical
-  algorithm from scratch. Wk 1–3 are foundations; the high-leverage
+- **Pivoting weekly.** Wk 1–2 are *locked* as of Day 2 settle:
+  integration notebook (Day 3) + XGB/LightGBM imbalanced notebook
+  (Day 4) + Bourke from Day 5. No more reshuffling until Bourke is
+  done or you hit a real blocker.
+- **Perfectionism on early weeks.** Don't implement classical
+  algorithms from scratch. Wk 1–2 are foundations; the high-leverage
   weeks are 5–7. Cut early if you're behind.
 - **Tutorial trap.** Following a tutorial step-by-step doesn't build
   the research signal. Always end a session with something you wrote
