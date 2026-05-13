@@ -65,17 +65,29 @@ priority — foundations first so later weeks compound.
 - Ship: **second tabular project on an imbalanced dataset** (credit fraud
   or churn). Demonstrates that you can handle imbalance correctly.
 
-### Week 3 — Neural networks + vision refresher
+### Week 3 — Neural networks (PyTorch foundation via Bourke)
 
-- Topics: MLP from scratch (numpy forward + backward), PyTorch
-  fundamentals (`nn.Module`, autograd, optimizers, `DataLoader`),
-  SGD/momentum/Adam, dropout, batchnorm, weight init.
-- Vision refresher (you already have CV background — go faster):
-  convolutions, pooling, ResNet/VGG architectures at concept level,
-  transfer learning. Train a small CNN on CIFAR or similar.
+- **Spine**: Daniel Bourke's *Learn PyTorch for Deep Learning*
+  ([YouTube, 25h](https://www.youtube.com/watch?v=V_xro1bcAuA),
+  [companion site](https://learnpytorch.io)). Code along, don't just
+  watch. Skip §0–12 (intro philosophy) and 1.5× speed §13–28 (tensor
+  basics ≈ numpy you already know). Normal speed for everything
+  involving an actual training loop / optimizer step / loss curve.
+  - Bourke Ch 0 (fundamentals, ~4h) — tensors, GPU, device-agnostic code.
+  - Bourke Ch 1 (workflow, ~4h) — training loop, save/load, the
+    canonical PyTorch lifecycle.
+  - Bourke Ch 2 (classification NN, ~5.5h) — first real classifier in
+    PyTorch.
+- Topics covered alongside the course: `nn.Module`, autograd, SGD /
+  Adam, dropout, batchnorm, logits → probs → labels, train/test loop
+  patterns.
+- Drop the "MLP from scratch in numpy" target — Bourke's training-loop
+  walkthrough is more interview-relevant time spent.
 - Daily papers: [`papers.md`](papers.md) §3.
-- Ship: **MLP + small CNN in PyTorch**, both with proper train/val
-  curves logged.
+- Ship: **PyTorch classification project on a real dataset** (your
+  choice — keep the heart dataset for continuity, or pick a new one).
+  Train/val curves logged, README explaining what you actually learned
+  from Bourke vs. what you added on top.
 
 ### Week 4 — Transformers + ViT
 
@@ -117,6 +129,11 @@ priority — foundations first so later weeks compound.
 
 - Plays to your existing CV background. Goal: a clean refresher that
   produces a strong portfolio piece in your area of strength.
+- **Front-load**: Bourke Ch 3 (computer vision, ~5.5h) at 1.5× speed —
+  CNNs, TorchVision, DataLoaders, end-to-end CV training loops. Skip
+  §92–95 (CV intro/what-is-CNN philosophy). Bourke Ch 4 (custom
+  datasets) is optional; you'll absorb that material naturally while
+  building the depth project.
 - Topics: classical stereo (rectification, block matching, semi-global
   matching), modern deep stereo (RAFT-Stereo, IGEV), monocular depth
   (MiDaS, DPT, Depth Anything v2), environmental awareness use cases.
