@@ -55,6 +55,10 @@ uv sync --all-extras
 uv add pandas
 uv add torch
 
+# install PyTorch CUDA wheels into the active environment
+# use this when you want the NVIDIA CUDA 13.0 build of torch + torchvision
+uv pip install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu130
+
 # add dev-only packages
 uv add --dev pytest
 
@@ -67,3 +71,19 @@ uv run jupyter lab
 ```
 Run a script: `uv run python linear-models/numpy_impl.py`
 Open notebooks: `uv run jupyter lab`
+
+### PyTorch CUDA 13.0
+
+If you need the CUDA 13.0 build of PyTorch, install the wheel set directly from
+the PyTorch index after activating your environment:
+
+```bash
+uv pip install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu130
+```
+
+If you want to remove an existing CPU-only or mismatched install first:
+
+```bash
+uv pip uninstall torch torchvision
+uv pip install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu130
+```
