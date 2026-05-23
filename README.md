@@ -1,36 +1,41 @@
 # ML Concepts
 
-From-scratch implementations of core machine learning ideas. Each top-level
-folder is one concept area: code, short notes, and tests live together.
+This repository is my ML/DL/AI dictionary: conceptual code, notes, and
+experiments in one place.
+
+Current direction:
+- `campusx-course/` contains all active course tracking, notes, and code.
+- Existing top-level concept folders remain as legacy/reference code.
+- I may pull ideas from `campusx-course/` into the generalized structure for
+	experiments.
 
 ## Layout
 
 ```
 ml/
+├── campusx-course/    # active CampusX deep learning course work
 ├── common/           # shared utilities and notes
-├── cv/               # CNNs and transfer learning
+├── cv/               # legacy/reference CV work
 ├── datasets/         # datasets used in notebooks
-├── linear-models/    # linear & logistic regression, ridge/lasso, perceptron
-├── metrics/          # confusion matrix, precision/recall/F1, etc.
-├── model-selection/  # train/test split, k-fold CV, grid/random search
-├── nn/               # tensors, autograd, optimizers, training pipeline
+├── linear-models/    # legacy/reference linear model work
+├── metrics/          # legacy/reference metrics work
+├── model-selection/  # legacy/reference model selection work
+├── nn/               # legacy/reference neural network work
 ├── prep/             # study plan, papers, interview checklist
-├── sequence/         # RNNs and next-word prediction
-├── transformers/     # attention, encoder/decoder blocks
-└── trees/            # decision trees, random forests, gradient boosting
+├── sequence/         # legacy/reference sequence model work
+├── transformers/     # legacy/reference transformer work
+└── trees/            # legacy/reference tree-based model work
 ```
 
-Each concept folder keeps code, short notes, and notebooks together. Some
-folders are notebook-first (e.g., [nn/](nn/), [metrics/](metrics/)), while
-others include small scripts or helpers.
-
-Add a new concept folder anytime — there's no central registry.
+The generalized folders are still useful for concept-first exploration. The
+new course-first workflow lives under `campusx-course/`.
 
 ## Plan
 
-The current 8-week study plan lives in [prep/PLAN.md](prep/PLAN.md), with
-paper tracking in [prep/papers.md](prep/papers.md). This repo is also the
-portfolio, so each week aims to ship a reviewed, documented artifact.
+The current plan lives in [prep/PLAN.md](prep/PLAN.md). It is now a 5-week
+track:
+- Wk 1: PyTorch rundown + organizing current progress.
+- Wk 2-5: complete the CampusX deep learning course.
 
 ## Setup
 
