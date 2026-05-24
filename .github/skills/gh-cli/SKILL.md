@@ -11,10 +11,40 @@ description: "Use when: working with GitHub CLI (gh), PR review workflows, gh pr
 - Start PR comments with: "GitHub Copilot (GPT-5.2-Codex):" on the first line.
 - Use clean markdown (blank lines between paragraphs, bullets for lists).
 
+### Reliable multiline comment pattern
+
+- For long or multi-line review comments prefer writing the comment to a temporary file
+  and then passing its contents to `gh pr comment` with command substitution. This
+  avoids shell quoting issues and ensures the comment body posts exactly as written.
+
+Example (safe, portable):
+
+```bash
+cat >/tmp/pr_comment.txt <<'COMMENT'
+GitHub Copilot (GPT-5.2-Codex): Quick review notes
+
+- Line 1 of review
+- Line 2 of review
+
+More details here.
+COMMENT
+
+gh pr comment 123 --body "$(cat /tmp/pr_comment.txt)"
+```
+
+- To edit the last comment made with `gh` if needed, use:
+
+```bash
+gh pr comment 123 --edit-last --body "$(cat /tmp/pr_comment.txt)"
+```
+
 ## Review Rules
 
 - Always review via GitHub PR and commit diffs, not local repo diffs.
 - Prefer commit-level diffs for review context; then check full PR diff.
+
+If a comment fails to appear as expected, re-run the above `gh pr comment` command and
+inspect the returned URL. Use `gh pr view <num> --json comments` to list comments programmatically.
 
 ## Quick PR Workflow
 
