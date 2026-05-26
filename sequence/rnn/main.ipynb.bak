@@ -1,0 +1,400 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "0",
+   "metadata": {},
+   "source": [
+    "# RNN for basic question answer task"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import os\n",
+    "import re\n",
+    "import torch\n",
+    "import torch.nn as nn\n",
+    "from torch.utils.data import Dataset, DataLoader\n",
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "current_dir = os.getcwd()\n",
+    "root_dir = os.path.dirname(os.path.dirname(current_dir))\n",
+    "dataset_dir = os.path.join(root_dir, \"datasets\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "dataset_path = os.path.join(dataset_dir, \"QA\", \"QA_Dataset.csv\")\n",
+    "df = pd.read_csv(dataset_path)\n",
+    "df.head(20)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4",
+   "metadata": {},
+   "source": [
+    "## Tokenize"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def tokenize(text):\n",
+    "    text = text.lower()\n",
+    "    text = re.sub(r\"[^a-z0-9]+\", \" \", text)\n",
+    "    return text.split()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "tokenize('What is the capital of France?')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7",
+   "metadata": {},
+   "source": [
+    "## Vocabulary"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "vocab = {\n",
+    "    \"<UNK>\": 0\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def build_vocab(row):\n",
+    "    tokenized_question = tokenize(row['question'])\n",
+    "    tokenized_answer = tokenize(row['answer'])\n",
+    "    merged_tokens = tokenized_question + tokenized_answer\n",
+    "    for token in merged_tokens:\n",
+    "        if token not in vocab:\n",
+    "            vocab[token] = len(vocab)\n",
+    "    \n",
+    "df.apply(build_vocab, axis=1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "10",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "len(vocab), vocab"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "11",
+   "metadata": {},
+   "source": [
+    "## Neumerical Indices"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "12",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def text_to_indices(text, vocab):\n",
+    "    indexed_text = []\n",
+    "    for token in tokenize(text):\n",
+    "        if token in vocab:\n",
+    "            indexed_text.append(vocab[token])\n",
+    "        else:\n",
+    "            indexed_text.append(vocab['<UNK>'])\n",
+    "            \n",
+    "    return indexed_text\n",
+    "\n",
+    "text_to_indices('What is france doing?', vocab)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "13",
+   "metadata": {},
+   "source": [
+    "# Dataset and Dataloader Creation"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "14",
+   "metadata": {},
+   "outputs": [],
+<<<<<<< HEAD
+   "source": [
+    "class QADataset(Dataset):\n",
+    "    def __init__(self, df:pd.DataFrame, vocab:dict):\n",
+    "        self.df = df\n",
+    "        self.vocab = vocab\n",
+    "        \n",
+    "    def __len__(self):\n",
+    "        return self.df.shape[0]\n",
+    "    \n",
+    "    def __getitem__(self, index):\n",
+    "        embedded_question = text_to_indices(self.df.iloc[index]['question'], self.vocab)\n",
+    "        embedded_answer = text_to_indices(self.df.iloc[index]['answer'], self.vocab)\n",
+    "        # This notebook treats each answer as a single class label.\n",
+    "        answer_index = int(embedded_answer[0])\n",
+    "        \n",
+    "        return torch.tensor(embedded_question, dtype=torch.long), torch.tensor(answer_index, dtype=torch.long)"
+   ]
+=======
+   "source": []
+>>>>>>> 5fb72c3 (feat(sequence-rnn): Implement tokenization and vocabulary creation)
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "15",
+   "metadata": {},
+   "outputs": [],
+<<<<<<< HEAD
+   "source": [
+    "dataset = QADataset(df, vocab)\n",
+    "\n",
+    "dataloader = DataLoader(dataset, batch_size=1, shuffle=True) \n",
+    "    # Avoid padding. If batch size was more than 1, padding was needed"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "16",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for question, answer in dataloader:\n",
+    "    print(question, answer)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "17",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "question, answer = next(iter(dataloader))\n",
+    "print(f\"question.shape={question.shape}\")\n",
+    "print(f\"answer.shape={answer.shape}\")\n",
+    "print(f\"answer.squeeze(-1).shape={answer.squeeze(-1).shape}\")\n",
+    "print(answer)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "18",
+   "metadata": {},
+   "source": [
+    "## Model Architecture Development"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "19",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class BasicRNN(nn.Module):\n",
+    "    def __init__(self, vocab_size):\n",
+    "        super().__init__()\n",
+    "        self.embedding = nn.Embedding(vocab_size, embedding_dim=50) # Convert each word into a 50-dimensional vector\n",
+    "        self.rnn = nn.RNN(50, 64, batch_first=True) # Input shape: (batch, seq, features)\n",
+    "        self.fc = nn.Linear(64, vocab_size)\n",
+    "        \n",
+    "    def forward(self, question):\n",
+    "        embedded_question = self.embedding(question)\n",
+    "        output, h_n = self.rnn(embedded_question)\n",
+    "        # h_n shape is (num_layers, batch, hidden_size); for a single-layer RNN this becomes (1, batch, 64)\n",
+    "        output = h_n.squeeze(0)\n",
+    "        output = self.fc(output)\n",
+    "        \n",
+    "        return output"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "20",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "learning_rate = 0.001\n",
+    "epochs = 20"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "21",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "model = BasicRNN(len(vocab))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "22",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "criterion = nn.CrossEntropyLoss()\n",
+    "optimizer = torch.optim.Adam(model.parameters(),  lr=learning_rate)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "23",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Training loop\n",
+    "for epoch in range(epochs):\n",
+    "    total_loss = 0\n",
+    "    for question, answer in dataloader:\n",
+    "        optimizer.zero_grad()\n",
+    "        \n",
+    "        # Forward pass\n",
+    "        output = model(question)\n",
+    "        \n",
+    "        # CrossEntropyLoss expects class indices shaped like (batch,)\n",
+    "        loss = criterion(output, answer.view(-1))\n",
+    "        \n",
+    "        # Calculate gradients\n",
+    "        loss.backward()\n",
+    "        \n",
+    "        # Update tokens\n",
+    "        optimizer.step()\n",
+    "        \n",
+    "        # Update Losss\n",
+    "        total_loss = total_loss + loss.item()\n",
+    "        \n",
+    "    print(f\"Epoch: {epoch + 1}, Loss: {total_loss:4f}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "24",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def predict(model, question, threshold=0.5):\n",
+    "    # Convert question into numbers\n",
+    "    numerical_question = text_to_indices(question, vocab)\n",
+    "    \n",
+    "    # Tensor\n",
+    "    question_tensor = torch.tensor(numerical_question).unsqueeze(0)\n",
+    "    \n",
+    "    # Send to model\n",
+    "    output = model(question_tensor)\n",
+    "    \n",
+    "    # Convert logits to probs\n",
+    "    probs = torch.nn.functional.softmax(output, dim=1)\n",
+    "    \n",
+    "    # Find index of max prob\n",
+    "    value, index = torch.max(probs, dim=1) # dim = 1 -> Column wise operation\n",
+    "    \n",
+    "    if value < threshold:\n",
+    "        print(\"I don't know\") \n",
+    "        \n",
+    "    print(list(vocab.keys())[index])\n",
+    "       "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "25",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "predict(model ,\"What is the capital of france?\")\n",
+    "predict(model ,\"Who discovered theory of relativity?\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "26",
+   "metadata": {},
+   "outputs": [],
+=======
+>>>>>>> 5fb72c3 (feat(sequence-rnn): Implement tokenization and vocabulary creation)
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "ml-concepts",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
