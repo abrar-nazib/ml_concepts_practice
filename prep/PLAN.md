@@ -80,107 +80,124 @@ Target: complete all 84 videos across 28 days (2026-06-01 to 2026-06-28).
 
 ### Wk 2 (2026-06-01 to 2026-06-07)
 
-| Day | Date | Video | Done |
-| :---: | :---: | :--- | :---: |
-| Day 1 | 2026-06-01 | Video 01 | [ ] |
-| Day 1 | 2026-06-01 | Video 02 | [ ] |
-| Day 1 | 2026-06-01 | Video 03 | [ ] |
-| Day 2 | 2026-06-02 | Video 04 | [ ] |
-| Day 2 | 2026-06-02 | Video 05 | [ ] |
-| Day 3 | 2026-06-03 | Video 06 | [ ] |
-| Day 3 | 2026-06-03 | Video 07 | [ ] |
-| Day 3 | 2026-06-03 | Video 08 | [ ] |
-| Day 3 | 2026-06-03 | Video 09 | [ ] |
-| Day 3 | 2026-06-03 | Video 10 | [ ] |
-| Day 4 | 2026-06-04 | Video 11 | [ ] |
-| Day 4 | 2026-06-04 | Video 12 | [ ] |
-| Day 4 | 2026-06-04 | Video 13 | [ ] |
-| Day 5 | 2026-06-05 | Video 14 | [ ] |
-| Day 5 | 2026-06-05 | Video 15 | [ ] |
-| Day 6 | 2026-06-06 | Video 16 | [ ] |
-| Day 6 | 2026-06-06 | Video 17 | [ ] |
-| Day 6 | 2026-06-06 | Video 18 | [ ] |
-| Day 7 | 2026-06-07 | Video 19 | [ ] |
-| Day 7 | 2026-06-07 | Video 20 | [ ] |
-| Day 7 | 2026-06-07 | Video 21 | [ ] |
-| Day 7 | 2026-06-07 | Video 22 | [ ] |
-| Day 7 | 2026-06-07 | Video 23 | [ ] |
+- **Day 1** (2026-06-01): 3 videos
+  - [x] Video 01
+  - [x] Video 02
+  - [x] Video 03
+- **Day 2** (2026-06-02): 2 videos
+  - [ ] Video 04
+  - [ ] Video 05
+- **Day 3** (2026-06-03): 5 videos
+  - [ ] Video 06
+  - [ ] Video 07
+  - [ ] Video 08
+  - [ ] Video 09
+  - [ ] Video 10
+- **Day 4** (2026-06-04): 3 videos
+  - [ ] Video 11
+  - [ ] Video 12
+  - [ ] Video 13
+- **Day 5** (2026-06-05): 2 videos
+  - [ ] Video 14
+  - [ ] Video 15
+- **Day 6** (2026-06-06): 3 videos
+  - [ ] Video 16
+  - [ ] Video 17
+  - [ ] Video 18
+- **Day 7** (2026-06-07): 5 videos
+  - [ ] Video 19
+  - [ ] Video 20
+  - [ ] Video 21
+  - [ ] Video 22
+  - [ ] Video 23
 
 ### Wk 3 (2026-06-08 to 2026-06-14)
-
-| Day | Date | Video | Done |
-| :---: | :---: | :--- | :---: |
-| Day 8 | 2026-06-08 | Video 24 | [ ] |
-| Day 8 | 2026-06-08 | Video 25 | [ ] |
-| Day 8 | 2026-06-08 | Video 26 | [ ] |
-| Day 8 | 2026-06-08 | Video 27 | [ ] |
-| Day 9 | 2026-06-09 | Video 28 | [ ] |
-| Day 9 | 2026-06-09 | Video 29 | [ ] |
-| Day 9 | 2026-06-09 | Video 30 | [ ] |
-| Day 10 | 2026-06-10 | Video 31 | [ ] |
-| Day 10 | 2026-06-10 | Video 32 | [ ] |
-| Day 10 | 2026-06-10 | Video 33 | [ ] |
-| Day 10 | 2026-06-10 | Video 34 | [ ] |
-| Day 11 | 2026-06-11 | Video 35 | [ ] |
-| Day 11 | 2026-06-11 | Video 36 | [ ] |
-| Day 11 | 2026-06-11 | Video 37 | [ ] |
-| Day 11 | 2026-06-11 | Video 38 | [ ] |
-| Day 12 | 2026-06-12 | Video 39 | [ ] |
-| Day 12 | 2026-06-12 | Video 40 | [ ] |
-| Day 12 | 2026-06-12 | Video 41 | [ ] |
-| Day 13 | 2026-06-13 | Video 42 | [ ] |
-| Day 13 | 2026-06-13 | Video 43 | [ ] |
-| Day 13 | 2026-06-13 | Video 44 | [ ] |
-| Day 13 | 2026-06-13 | Video 45 | [ ] |
-| Day 13 | 2026-06-13 | Video 46 | [ ] |
-| Day 14 | 2026-06-14 | Video 47 | [ ] |
-| Day 14 | 2026-06-14 | Video 48 | [ ] |
-| Day 14 | 2026-06-14 | Video 49 | [ ] |
-| Day 14 | 2026-06-14 | Video 50 | [ ] |
+- **Day 8** (2026-06-08): 4 videos
+  - [ ] Video 24
+  - [ ] Video 25
+  - [ ] Video 26
+  - [ ] Video 27
+- **Day 9** (2026-06-09): 3 videos
+  - [ ] Video 28
+  - [ ] Video 29
+  - [ ] Video 30
+- **Day 10** (2026-06-10): 4 videos
+  - [ ] Video 31
+  - [ ] Video 32
+  - [ ] Video 33
+  - [ ] Video 34
+- **Day 11** (2026-06-11): 4 videos
+  - [ ] Video 35
+  - [ ] Video 36
+  - [ ] Video 37
+  - [ ] Video 38
+- **Day 12** (2026-06-12): 3 videos
+  - [ ] Video 39
+  - [ ] Video 40
+  - [ ] Video 41
+- **Day 13** (2026-06-13): 5 videos
+  - [ ] Video 42
+  - [ ] Video 43
+  - [ ] Video 44
+  - [ ] Video 45
+  - [ ] Video 46
+- **Day 14** (2026-06-14): 4 videos
+  - [ ] Video 47
+  - [ ] Video 48
+  - [ ] Video 49
+  - [ ] Video 50
 
 ### Wk 4 (2026-06-15 to 2026-06-21)
-
-| Day | Date | Video | Done |
-| :---: | :---: | :--- | :---: |
-| Day 15 | 2026-06-15 | Video 51 | [ ] |
-| Day 15 | 2026-06-15 | Video 52 | [ ] |
-| Day 15 | 2026-06-15 | Video 53 | [ ] |
-| Day 15 | 2026-06-15 | Video 54 | [ ] |
-| Day 15 | 2026-06-15 | Video 55 | [ ] |
-| Day 16 | 2026-06-16 | Video 56 | [ ] |
-| Day 16 | 2026-06-16 | Video 57 | [ ] |
-| Day 16 | 2026-06-16 | Video 58 | [ ] |
-| Day 17 | 2026-06-17 | Video 59 | [ ] |
-| Day 17 | 2026-06-17 | Video 60 | [ ] |
-| Day 17 | 2026-06-17 | Video 61 | [ ] |
-| Day 18 | 2026-06-18 | Video 62 | [ ] |
-| Day 18 | 2026-06-18 | Video 63 | [ ] |
-| Day 19 | 2026-06-19 | Video 64 | [ ] |
-| Day 19 | 2026-06-19 | Video 65 | [ ] |
-| Day 20 | 2026-06-20 | Video 66 | [ ] |
-| Day 20 | 2026-06-20 | Video 67 | [ ] |
-| Day 21 | 2026-06-21 | Video 68 | [ ] |
-| Day 21 | 2026-06-21 | Video 69 | [ ] |
+- **Day 15** (2026-06-15): 5 videos
+  - [ ] Video 51
+  - [ ] Video 52
+  - [ ] Video 53
+  - [ ] Video 54
+  - [ ] Video 55
+- **Day 16** (2026-06-16): 3 videos
+  - [ ] Video 56
+  - [ ] Video 57
+  - [ ] Video 58
+- **Day 17** (2026-06-17): 3 videos
+  - [ ] Video 59
+  - [ ] Video 60
+  - [ ] Video 61
+- **Day 18** (2026-06-18): 2 videos
+  - [ ] Video 62
+  - [ ] Video 63
+- **Day 19** (2026-06-19): 2 videos
+  - [ ] Video 64
+  - [ ] Video 65
+- **Day 20** (2026-06-20): 2 videos
+  - [ ] Video 66
+  - [ ] Video 67
+- **Day 21** (2026-06-21): 2 videos
+  - [ ] Video 68
+  - [ ] Video 69
 
 ### Wk 5 (2026-06-22 to 2026-06-28)
-
-| Day | Date | Video | Done |
-| :---: | :---: | :--- | :---: |
-| Day 22 | 2026-06-22 | Video 70 | [ ] |
-| Day 22 | 2026-06-22 | Video 71 | [ ] |
-| Day 23 | 2026-06-23 | Video 72 | [ ] |
-| Day 23 | 2026-06-23 | Video 73 | [ ] |
-| Day 24 | 2026-06-24 | Video 74 | [ ] |
-| Day 24 | 2026-06-24 | Video 75 | [ ] |
-| Day 25 | 2026-06-25 | Video 76 | [ ] |
-| Day 25 | 2026-06-25 | Video 77 | [ ] |
-| Day 26 | 2026-06-26 | Video 78 | [ ] |
-| Day 26 | 2026-06-26 | Video 79 | [ ] |
-| Day 27 | 2026-06-27 | Video 80 | [ ] |
-| Day 27 | 2026-06-27 | Video 81 | [ ] |
-| Day 28 | 2026-06-28 | Video 82 | [ ] |
-| Day 28 | 2026-06-28 | Video 83 | [ ] |
-| Day 28 | 2026-06-28 | Video 84 | [ ]
+- **Day 22** (2026-06-22): 2 videos
+  - [ ] Video 70
+  - [ ] Video 71
+- **Day 23** (2026-06-23): 2 videos
+  - [ ] Video 72
+  - [ ] Video 73
+- **Day 24** (2026-06-24): 2 videos
+  - [ ] Video 74
+  - [ ] Video 75
+- **Day 25** (2026-06-25): 2 videos
+  - [ ] Video 76
+  - [ ] Video 77
+- **Day 26** (2026-06-26): 2 videos
+  - [ ] Video 78
+  - [ ] Video 79
+- **Day 27** (2026-06-27): 2 videos
+  - [ ] Video 80
+  - [ ] Video 81
+- **Day 28** (2026-06-28): 3 videos
+  - [ ] Video 82
+  - [ ] Video 83
+  - [ ] Video 84
 
 Notes:
 - Keep video order as-is from the playlist.
